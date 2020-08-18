@@ -1,0 +1,17 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
+}
+
+ion-icon {
+   font-size: 2em;
+}
+
+.add__btn {
+   background: none;
+   border: none;
+   cursor: pointer;
+   color: #28B9B5
+}
+
