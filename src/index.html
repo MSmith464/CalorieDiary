@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
-    <title>Document</title>
+    <title>Calorie Diary</title>
 </head>
 <body>
     <div>
-        <h1>Calorie Diary</h1>
+        <div>Calorie Diary <span>Total Calories Today:</span></div>
+        <div class="calorie__total">Total Calories for %Date% </div>
+        <div>
         <input type="text" class="food__item" placeholder="Add food item">
+        <input type="number" class="num__items" placeholder="Enter amount">
         <button class="add__btn"><ion-icon name="add-circle-outline"></ion-icon></button>
+        </div>
         
     </div>
 
     <div class="items__container">
-        <div>Example item</div>
+        <div>%Example item%</div>
+        <div>%Amt% cal</div>
     </div>
 
 

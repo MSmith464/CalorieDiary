@@ -1,0 +1,22 @@
+{
+  "name": "caloriediary",
+  "version": "1.0.0",
+  "description": "Project to calculate and track your calorie intake",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSmith464/CalorieDiary.git"
+  },
+  "author": "Morgan Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MSmith464/CalorieDiary/issues"
+  },
+  "homepage": "https://github.com/MSmith464/CalorieDiary#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1"
+  }
+}
