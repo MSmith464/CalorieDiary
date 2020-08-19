@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <title>Calorie Diary</title>
 </head>
 <body>
     <div>
-        <div>Calorie Diary <span>Total Calories Today:</span></div>
-        <div class="calorie__total">Total Calories for %Date% </div>
-        <div>
-        <input type="text" class="food__item" placeholder="Add food item">
-        <input type="number" class="num__items" placeholder="Enter amount">
-        <button class="add__btn"><ion-icon name="add-circle-outline"></ion-icon></button>
+        <div class="app__conatainer">
+            <div class="app__title">Calorie Diary</div>
+            <div class="date">Total Calories for %Date%: %Amt% </div>
+            <div class="user-info">
+                <div class="fields">
+                    <input type="text" class="food__item" placeholder="Add food item">
+                    <input type="number" class="num__items" placeholder="Amount (per 100g)">
+                </div>
+                <button class="add__btn"><ion-icon name="add-circle-outline"></ion-icon></button>
+            </div>
         </div>
         
     </div>
 
-    <div class="items__container">
-        <div>%Example item%</div>
-        <div>%Amt% cal</div>
+    <div class="item-list">
+        <div class="list__heading">Intake</div>
+        <div class="items__container">
+            <div class="item">Source</div>
+            <div style="margin-right: 3em" class="amount">Calories</div>
+        </div>
     </div>
-
 
     
     <script src="app.js"></script>
