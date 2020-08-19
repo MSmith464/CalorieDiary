@@ -6,6 +6,15 @@ const apiID = '2d1ec81e';
 const apiKey = '836d96fcf21461eaa22cd298d896dd07'
 
 // calorie controller
+
+let data = {
+    allItems:{
+        items: [],
+    },
+    total: 0
+    
+};
+
 function calculateCalories() {
 
 }
@@ -34,15 +43,45 @@ async function getFood(food) {
 let DOMstrings = {
     foodItem: '.food__item',
     addButton: '.add__btn',
-    numItems: '.num__items'
+    numItems: '.num__items',
+    itemsContainer: '.item-list',
+    dateLabel: '.date'
 }
 
 function getInput() {
     foodData = {
         foodItem: document.querySelector(DOMstrings.foodItem).value,
-        amount: parseInt(document.querySelector(DOMstrings.numItems).value)
+        amount: parseInt(document.querySelector(DOMstrings.numItems).value),
     }
     return (foodData);
+}
+
+function displayItems(item, cals) {
+
+    //Add new item to list
+    let html, element, newHtml;
+
+    element = DOMstrings.itemsContainer;
+
+    html = '<div class="items__container"><div class="item">%Example item%</div><div class="amount">%Amt% cal <ion-icon style="margin-left: 1em" name="trash-outline"></ion-icon></div></div>';
+
+    newHtml = html.replace('%Example item%', item.foodItem);
+    newHtml = newHtml.replace('%Amt%', cals);
+
+    document.querySelector(element).insertAdjacentHTML("beforeend",newHtml);
+}
+
+function displayDate(){
+    let now, today, months, year, month;
+
+    now = new Date();
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    today = now.getDate()
+    month = now.getMonth();
+    year = now.getFullYear()
+
+    document.querySelector(DOMstrings.dateLabel).textContent = `${months[month]} ${today}, ${year}`;
 }
 
 
@@ -66,22 +105,22 @@ function addItem() {
     input = getInput();
 
     if (input.foodItem !== "" && input.amount > 0){
-        getFood(input.foodItem).then(calories =>
-            console.log(`The amount of calories in your ${input.foodItem} is ${calories}`));
+        getFood(input.foodItem).then(calories =>{
+            console.log(`The amount of calories in your ${input.foodItem} is ${calories}`);
+            displayItems(input, calories);
+        });
+        
     }else {
         alert("Please enter a food item and an amount.")
     }
 
-
-    
-
-    // 2. Add item to calorie controller
+     // 2. Add item to calorie controller
 
     // 3. Display item and calorie count
 
     // 4. clear fields
 
 };
-
+displayDate();
 setupEventListeners();
 
