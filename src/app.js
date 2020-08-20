@@ -63,7 +63,7 @@ function displayItems(item, cals) {
 
     element = DOMstrings.itemsContainer;
 
-    html = '<div class="items__container"><div class="item">%Example item%</div><div class="amount">%Amt% cal <ion-icon style="margin-left: 1em" name="trash-outline"></ion-icon></div></div>';
+    html = '<div class="items__container"><div class="item">%Example item%</div><div class="amount">%Amt% cal <ion-icon style="margin-left: .5em" name="trash-outline"></ion-icon></div></div>';
 
     newHtml = html.replace('%Example item%', item.foodItem);
     newHtml = newHtml.replace('%Amt%', cals);
@@ -98,7 +98,7 @@ let setupEventListeners = function() {
 }
 
 function addItem() {
-    let input, calories, newItem;
+    let input, calories;
 
 
     // 1. Get new item entry
